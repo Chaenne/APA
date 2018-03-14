@@ -4,15 +4,15 @@ void SelectionSort(int a[], int n ){
 
  int i, j, min ,aux;
 
- 	for (i=0;i<=n-1;i++){
+ 	for (i=0;i<=n-1;i++){//percorre o array e guarda o lugar onde o minimo deve estar
  		min = i;
  		for (j = i+1; j<= n-1;j++){
- 			if (a[j] < a[min])
+ 			if (a[j] < a[min]) //  acha o menor elemento e coloca no indice indicado por min
  			{ 
  				min = j;
  				
  			} 
- 			if (a[i] != a[min])
+ 			if (a[i] != a[min]) //  faz o swap entre os valores 
  			{
  				aux = a[i];
  				a[i] = a[min];
@@ -25,7 +25,8 @@ void SelectionSort(int a[], int n ){
  	}  
 
 }
-int main(){
+int main(){ 
+	// lê o arquivo a ser ordenado 
 	int n;
 	FILE* f = fopen("teste","r");
 	fscanf(f,"%d", &n);
