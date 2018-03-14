@@ -1,46 +1,42 @@
 #include <stdio.h>
 
+void SelectionSort(int a[], int n ){
 
-void insertionSort(int v[], int n) {
+ int i, j, min ,aux;
 
-      int i, j, min, aux;
+ 	for (i=0;i<=n-1;i++){
+ 		min = i;
+ 		for (j = i+1; j<= n-1;j++){
+ 			if (a[j] < a[min])
+ 			{ 
+ 				min = j;
+ 				
+ 			} 
+ 			if (a[i] != a[min])
+ 			{
+ 				aux = a[i];
+ 				a[i] = a[min];
+ 				a[min] = aux;
+ 			}
+ 			
+ 		}
 
-      for (i = 0; i < n - 1; i++) {
 
-            min = i;
-
-            for (j = i + 1; j < n; j++)
-
-                  if (v[j] < v[min])
-
-                        min = j;
-
-            if (min != i) {
-
-                  aux = v[i];
-
-                  v[i] = v[min];
-
-                  v[min] = aux;
-
-            }
-
-      }
+ 	}  
 
 }
 int main(){
 	int n;
-	FILE* f = fopen("num.1000.4.in","r");
+	FILE* f = fopen("teste","r");
 	fscanf(f,"%d", &n);
 	int arr[n];
 	for(int i = 0; i < n; i++){
 		fscanf(f,"%d", &arr[i]);
 	}
-	//SelectionSort(arr,n);
-	insertionSort(arr,n);
+	SelectionSort(arr,n);
+	//InsertionSort(arr,n);
 	for(int i = 0; i < n; i++){
-		printf("%d\t",arr[i] );
+		printf("%d\n",arr[i] );
 	}
-
 }
 
