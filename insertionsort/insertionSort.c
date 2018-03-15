@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 
-void insertionSort(int v[], int n) {
+void selectionSort(int v[], int n) {
 
       int i, j, min, aux;
 
@@ -40,8 +40,8 @@ int main(){
 	for(int i = 0; i < n; i++){
 		fscanf(f,"%d", &arr[i]); 
 	}
-	//SelectionSort(arr,n);
-	insertionSort(arr,n);
+	SelectionSort(arr,n);
+	//insertionSort(arr,n);
 	for(int i = 0; i < n; i++){
 		printf("%d\t",arr[i] );
 	}
